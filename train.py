@@ -184,6 +184,9 @@ def get_args():
 
 
 if __name__ == '__main__':
+    # on mac, to fix parallels bugs
+    import os
+    os.environ["OMP_NUM_THREADS"] = "1"
     args = get_args()
 
     logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
